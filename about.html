@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - College Assignment Upload</title>
+    <!-- FontAwesome CDN for the icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+      /* Navbar Styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #0b35a0;
+        padding: 10px 20px;
+        display: flex;
+        /* justify-content: flex-start; */
+        align-items: center;
+        z-index: 10;
+        justify-content: center;
+      }
+      .navbar a {
+        color: rgb(234, 225, 225);
+
+        text-decoration: none;
+        font-size: 25px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+      }
+      .navbar a:hover {
+        color: #ddd;
+      }
+      .navbar i {
+        margin-right: 8px;
+      }
+
+      /* About Section */
+      .about-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 10px;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="index.html"><i class="fas fa-home"></i>Back to Home</a>
+    </div>
+
+    <!-- background image -->
+    <img
+      src="https://www.technocrazed.com/wp-content/uploads/2015/12/black-wallpaper-to-set-as-background-1.jpg"
+      style="
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      "
+    />
+
+    <!-- About section -->
+    <div class="about-container">
+      <h1>About This Website</h1>
+      <p>
+        Hi, I'm Krunal, and this website is designed to provide helpful
+        materials and resources for your college assignments.
+      </p>
+      <p>
+        Here, you'll find the best paragraphs, guides, study materials, and
+        other resources to help you excel in your academic work.
+      </p>
+      <p>Explore, learn, and improve your assignments with ease!</p>
+    </div>
+  </body>
+</html>

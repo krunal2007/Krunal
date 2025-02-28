@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Assignment Download</title>
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Set the image as the background */
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url("https://static.vecteezy.com/system/resources/previews/009/302/810/non_2x/beautiful-forest-panoramic-realistic-wanderlust-background-landscape-dark-trees-pine-in-mist-design-mystery-fog-in-park-concept-nature-beauty-tourism-web-banner-free-vector.jpg");
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Navbar styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+      }
+
+      .navbar .logo {
+        color: white;
+        font-size: 1.8rem;
+        margin-left: 300px;
+        font-weight: bold;
+      }
+
+      .navbar .nav-links {
+        display: flex;
+        gap: 20px;
+        color: white;
+      }
+
+      .navbar .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      .navbar .nav-links a:hover {
+        color: #007bff;
+      }
+
+      .navbar .search-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar input[type="text"] {
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        width: 200px;
+        margin-right: 10px;
+      }
+
+      .navbar .profile-icon {
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+
+      .navbar .profile-icon:hover {
+        color: #007bff;
+      }
+
+      /* Container box for content */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding-top: 80px; /* Adjusted for navbar */
+      }
+
+      /* Subject boxes */
+      .subjects {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+      }
+
+      .subject-box {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, background-color 0.3s;
+        cursor: pointer;
+      }
+
+      .subject-box:hover {
+        background-color: #007bff;
+        transform: translateY(-10px);
+      }
+
+      .subject-box h3 {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #333;
+      }
+
+      /* Footer styling */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        color: white;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+      }
+
+      /* Media Query for mobile responsiveness */
+      @media screen and (max-width: 768px) {
+        /* Adjust the navbar for small screens */
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 15px;
+        }
+
+        .navbar .logo {
+          font-size: 1.5rem;
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+
+        .navbar .nav-links {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .navbar .nav-links a {
+          font-size: 1rem;
+        }
+
+        .navbar input[type="text"] {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        /* Adjust the subject boxes layout */
+        .subjects {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .subject-box {
+          width: 90%; /* Increase width for better fit */
+          padding: 25px;
+          font-size: 1rem;
+        }
+
+        .footer {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        /* Further adjustments for smaller mobile screens */
+        .navbar {
+          padding: 10px;
+        }
+
+        .navbar .logo {
+          font-size: 1.2rem;
+        }
+
+        .subject-box {
+          padding: 20px;
+        }
+
+        .footer {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">MADE BY- KRUNAL</div>
+      <br />
+      <div class="nav-links">
+        <div class="search-container"></div>
+        <input type="text" placeholder="Search..." />
+        <i class="fas fa-search"></i>
+        <a href="#home">Home</a>
+        <a href="about.html ">About Me</a>
+      </div>
+      <div class="profile-icon">
+        <i class="fas fa-user"></i>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+      <h1>Choose Your Subject For Assignment</h1>
+      <div class="subjects">
+        <!-- Subject Boxes -->
+        <div class="subject-box" onclick="window.location.href='fas.html'">
+          <h3>FAS</h3>
+        </div>
+        <div class="subject-box" onclick="window.location.href='dela.html'">
+          <h3>DELA</h3>
+        </div>
+        <div class="subject-box" onclick="window.location.href='bst.html'">
+          <h3>BST</h3>
+        </div>
+        <div class="subject-box" onclick="window.location.href='ec.html'">
+          <h3>EC</h3>
+        </div>
+        <div class="subject-box" onclick="window.location.href='es.html'">
+          <h3>ES</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 College Website</p>
+    </div>
+  </body>
+</html>
