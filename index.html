@@ -125,11 +125,14 @@
 
       /* Footer styling */
       .footer {
+        display: flex;
+        justify-content: center;
         text-align: center;
         padding: 20px;
         color: white;
         position: absolute;
-        bottom: 10px;
+        /* bottom: 10px; */
+
         width: 100%;
       }
 
@@ -177,6 +180,7 @@
 
         .footer {
           font-size: 0.9rem;
+          justify-content: center;
         }
       }
 
@@ -193,21 +197,22 @@
         .subject-box {
           padding: 20px;
         }
-
-        .footer {
-          font-size: 0.8rem;
-        }
       }
     </style>
   </head>
   <body>
     <!-- Navbar -->
     <div class="navbar">
-      <div class="logo">MADE BY- KRUNAL PATEL<br />IU2441220193</div>
+      <div class="logo">MADE BY- KRUNAL <br />IU2441220193</div>
       <br />
       <div class="nav-links">
         <div class="search-container"></div>
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          id="search"
+          placeholder="Search..."
+          oninput="filterSubjects()"
+        />
         <i class="fas fa-search"></i>
         <a href="#home">Home</a>
         <a href="about.html ">About Me</a>
@@ -220,29 +225,86 @@
     <!-- Main content -->
     <div class="container">
       <h1>Choose Your Subject For Assignment</h1>
-      <div class="subjects">
+      <div class="subjects" id="subjects">
         <!-- Subject Boxes -->
-        <div class="subject-box" onclick="window.location.href='fas.html'">
+        <div
+          class="subject-box"
+          data-subject="fas"
+          onclick="window.location.href='fas.html'"
+        >
           <h3>FAS</h3>
         </div>
-        <div class="subject-box" onclick="window.location.href='dela.html'">
+        <div
+          class="subject-box"
+          data-subject="dela"
+          onclick="window.location.href='dela.html'"
+        >
           <h3>DELA</h3>
         </div>
-        <div class="subject-box" onclick="window.location.href='bst.html'">
+        <div
+          class="subject-box"
+          data-subject="bst"
+          onclick="window.location.href='bst.html'"
+        >
           <h3>BST</h3>
         </div>
-        <div class="subject-box" onclick="window.location.href='ec.html'">
+        <div
+          class="subject-box"
+          data-subject="ec"
+          onclick="window.location.href='ec.html'"
+        >
           <h3>EC</h3>
         </div>
-        <div class="subject-box" onclick="window.location.href='es.html'">
+        <div
+          class="subject-box"
+          data-subject="es"
+          onclick="window.location.href='es.html'"
+        >
           <h3>ES</h3>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
-    <div class="footer">
-      <p>&copy; 2025 College Website</p>
+    <div>
+      <footer class="footer">
+        <p>&copy; 2025 Krunal's Website</p>
+      </footer>
     </div>
+
+    <script>
+      // Function to filter and reorder subjects based on search input
+      function filterSubjects() {
+        const searchTerm = document
+          .getElementById("search")
+          .value.toLowerCase();
+        const subjectBoxes = document.querySelectorAll(".subject-box");
+
+        // Loop through each subject box and hide or show based on search term
+        subjectBoxes.forEach((box) => {
+          const subjectName = box.getAttribute("data-subject");
+          if (subjectName.toLowerCase().includes(searchTerm)) {
+            box.style.display = "block"; // Show the box
+          } else {
+            box.style.display = "none"; // Hide the box
+          }
+        });
+
+        // Reorder subject boxes based on the search input
+        const subjectsContainer = document.getElementById("subjects");
+        const sortedBoxes = Array.from(subjectBoxes).sort((a, b) => {
+          const nameA = a.getAttribute("data-subject").toLowerCase();
+          const nameB = b.getAttribute("data-subject").toLowerCase();
+
+          // Compare alphabetically for sorting
+          return nameA.localeCompare(nameB);
+        });
+
+        // Append sorted boxes back to the container
+        sortedBoxes.forEach((box) => {
+          subjectsContainer.appendChild(box);
+        });
+      }
+    </script>
   </body>
 </html>
