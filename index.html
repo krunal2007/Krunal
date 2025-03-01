@@ -100,7 +100,9 @@
         justify-content: center;
         margin-top: 30px;
       }
-
+      .h11 {
+        color: rgb(42, 29, 29);
+      }
       .subject-box {
         background-color: rgba(255, 255, 255, 0.8);
         padding: 40px;
@@ -224,7 +226,10 @@
 
     <!-- Main content -->
     <div class="container">
-      <h1>Choose Your Subject For Assignment</h1>
+      <h1 id="subject-heading" class="h11">
+        Choose Your Subject For Assignment
+      </h1>
+
       <div class="subjects" id="subjects">
         <!-- Subject Boxes -->
         <div
@@ -279,16 +284,26 @@
           .getElementById("search")
           .value.toLowerCase();
         const subjectBoxes = document.querySelectorAll(".subject-box");
+        let found = false;
 
         // Loop through each subject box and hide or show based on search term
         subjectBoxes.forEach((box) => {
           const subjectName = box.getAttribute("data-subject");
           if (subjectName.toLowerCase().includes(searchTerm)) {
             box.style.display = "block"; // Show the box
+            found = true; // Mark as found
           } else {
             box.style.display = "none"; // Hide the box
           }
         });
+
+        // If no subjects match, change the heading text
+        const heading = document.getElementById("subject-heading");
+        if (found) {
+          heading.textContent = "Choose Your Subject For Assignment"; // Original text
+        } else {
+          heading.textContent = "Not Found"; // If no subjects match
+        }
 
         // Reorder subject boxes based on the search input
         const subjectsContainer = document.getElementById("subjects");
